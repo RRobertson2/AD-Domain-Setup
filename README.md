@@ -1,4 +1,4 @@
-# AD-Domain-Setup
+# AD-Domain-Install via Proxmox
 
 ## Objective
 Designed and deployed an Active Directory Domain Controller in a virtual lab using Proxmox VE. The project aimed to simulate a real enterprise IT environment, providing hands-on experience with domain services, centralized authentication, DNS integration, and Group Policy management. This environment was used to practice common administrative tasks and test Windows-based infrastructure scenarios.
