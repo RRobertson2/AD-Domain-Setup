@@ -63,14 +63,25 @@ Designed and deployed an Active Directory Domain Controller in a virtual lab usi
         -Custom Install.<br>
         <br>
         <img src="https://github.com/user-attachments/assets/22b34de5-f488-4eb5-8a87-a56e0e50e10c"Launch VM & Install Windows Server" width="1000">
+        <img src="https://github.com/user-attachments/assets/fe34e6fe-fb2f-48e4-8777-8eeab7867308"Launch VM & Install Windows Server" width="1000">
+        <img src="https://github.com/user-attachments/assets/d8fe5b20-13e5-40ed-82d9-ac3122889065"Launch VM & Install Windows Server" width="1000">
       </td>
     </tr>
 
   <tr>
-      <td><strong>Step 4<br>Promote to Domain Controller</strong></td>
+      <td><strong>Step 4<br>Install VM Divers</strong></td>
       <td>
-        Promote the server to a domain controller by configuring a new forest and domain (e.g., homelab.local).<br><br>
-        <img src="https://imgur.com/your_image_4.png" alt="Domain Promotion" width="600">
+        Making sure the correct VirtIO files are used so you don't get error messages when using VM.<br>
+        <br>
+        -VirtIO Balloon<br>
+        -VirtIO Scsi<br>
+        -Red Hat VirtIO Ethernet<br>
+        <br>
+        <img src="https://github.com/user-attachments/assets/66d417ad-d099-42f3-bf13-dd85f1464056" alt="VM Diver Install" width="1000">
+        <img src="https://github.com/user-attachments/assets/7ba4528d-32ee-41e6-be4a-d3c67cd01116" alt="VM Diver Install" width="1000">
+        <img src="https://github.com/user-attachments/assets/333c241e-2468-4391-adc9-4bd047cd26d1" alt="VM Diver Install" width="1000">
+        <img src="https://github.com/user-attachments/assets/02163f93-0de1-4754-92ca-e0b8ced2d787" alt="VM Diver Install" width="1000">
+        <img src="https://github.com/user-attachments/assets/05f5b0af-e47c-482d-b420-9707d13ad9ad" alt="VM Diver Install" width="1000">
       </td>
     </tr>
 
