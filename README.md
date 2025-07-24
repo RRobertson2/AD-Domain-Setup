@@ -33,7 +33,7 @@ Designed and deployed an Active Directory Domain Controller in a virtual lab usi
       <td><strong>Step 1<br>Proxmox VM Creation</strong></td>
       <td>
         Create a new Windows Server 2022 virtual machine using Proxmox. Assign CPU, memory, and disk space based on lab needs.<br><br>
-        <img src="https://imgur.com/your_image_1.png" alt="Proxmox VM Creation" width="600">
+        <img src="https://github.com/user-attachments/assets/f801cb7e-6068-424e-bc1f-73d372cfeb1c" alt="Proxmox VM Creation" width="600">
       </td>
     </tr>
 
