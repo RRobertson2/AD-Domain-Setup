@@ -32,24 +32,37 @@ Designed and deployed an Active Directory Domain Controller in a virtual lab usi
 <tr>
       <td><strong>Step 1<br>Proxmox VM Creation</strong></td>
       <td>
-        Create a new Windows Server 2022 virtual machine using Proxmox. Assign CPU, memory, and disk space based on lab needs.<br><br>
-        <img src="https://github.com/user-attachments/assets/f801cb7e-6068-424e-bc1f-73d372cfeb1c" alt="Proxmox VM Creation" width="600">
+        Create a new Windows Server 2022 virtual machine using Proxmox. Assign CPU, memory, and disk space based on lab needs.<br>
+        <br>
+        -Windows ISO files<br>
+        -Proxmox Virtio-win ISO<br>
+        -Storage 120Gb<br>
+        -CPU 2 Cores<br>
+        -Memory 2Gb<br> 
+        <br>
+        <img src="https://github.com/user-attachments/assets/f801cb7e-6068-424e-bc1f-73d372cfeb1c" alt="Proxmox VM Creation" width="1000">
+        <img src="https://github.com/user-attachments/assets/d4e14173-c2fd-46db-99d7-92244f0fc116"Proxmox VM Creation" width="1000">
       </td>
     </tr>
 
   <tr>
-      <td><strong>Step 2<br>Windows Server Installation</strong></td>
+      <td><strong>Step 2<br>Adjust Iso Images</strong></td>
       <td>
-        Install Windows Server 2022 on the VM and complete initial setup including computer name and network settings.<br><br>
-        <img src="https://imgur.com/your_image_2.png" alt="Windows Server Setup" width="600">
+        Before launching the VM go into hardware section and make sure WinServ Iso is listed first then followed by Virtio ISO. Helps with diver installation.<br><br>
+        <img src="https://github.com/user-attachments/assets/96b64655-b705-4a9c-832c-ae5558f0f9fe" alt="Adjust Iso Images" width="1000">
       </td>
     </tr>
 
   <tr>
-      <td><strong>Step 3<br>AD DS Role Installation</strong></td>
+      <td><strong>Step 3<br>Launch VM & Install Windows Server</strong></td>
       <td>
-        Use Server Manager to install the Active Directory Domain Services role and related features.<br><br>
-        <img src="https://imgur.com/your_image_3.png" alt="AD DS Role Installation" width="600">
+        Start the VM and open the console to begin the OS installation.<br>
+        <br>
+        -Select your region, time, and keyboard settings.<br>
+        -Windows Server 2022 Desktop Experience.<br>
+        -Custom Install.<br>
+        <br>
+        <img src="https://github.com/user-attachments/assets/22b34de5-f488-4eb5-8a87-a56e0e50e10c"Launch VM & Install Windows Server" width="1000">
       </td>
     </tr>
 
