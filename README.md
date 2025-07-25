@@ -95,7 +95,9 @@ Designed and deployed an Active Directory Domain Controller in a virtual lab usi
      <tr>
       <td><strong>Step 6<br>Fixing Keyboard Input Issues</strong></td>
       <td>
-        Completed administrator setup and manually updated the server’s IP address, subnet mask, and DNS server to place it on a secure internal network. <br><br>
+        Resolved random input and keyboard glitches by: <br><br>
+        -Navigating to Advanced Keyboard Settings
+        -Switching input method to “English (United States) – US” This corrected typing behavior inside the Proxmox VM console.
         <img src="https://github.com/user-attachments/assets/5ac9ae4a-a162-4b46-916e-921a02398c52" alt="DNS Configuration" width="1000">
         <img src="https://github.com/user-attachments/assets/40c7428d-d2ed-4b95-890a-c0ccd8be208f" alt="OU and User Setup" width="1000">
         <img src="https://github.com/user-attachments/assets/898e6c2b-8cd1-4d2d-855f-441314f267d6" alt="DNS Configuration" width="1000">
