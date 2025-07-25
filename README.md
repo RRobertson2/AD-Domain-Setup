@@ -32,13 +32,12 @@ Designed and deployed an Active Directory Domain Controller in a virtual lab usi
 <tr>
       <td><strong>Step 1<br>Proxmox VM Creation</strong></td>
       <td>
-        Create a new Windows Server 2022 virtual machine using Proxmox. Assign CPU, memory, and disk space based on lab needs.<br>
+        Created a new virtual machine in Proxmox VE with the following resources:<br>
         <br>
-        -Windows ISO files<br>
-        -Proxmox Virtio-win ISO<br>
-        -Storage 120Gb<br>
-        -CPU 2 Cores<br>
-        -Memory 2Gb<br> 
+        -CPU: 2 cores<br>
+        -Memory: 2 GB<br>
+        -Disk: 120 GB<br>
+        -ISO files: Windows Server 2022 and VirtIO driver ISO added to CD-ROM drives<br> 
         <br>
         <img src="https://github.com/user-attachments/assets/f801cb7e-6068-424e-bc1f-73d372cfeb1c" alt="Proxmox VM Creation" width="1000">
         <img src="https://github.com/user-attachments/assets/d4e14173-c2fd-46db-99d7-92244f0fc116"Proxmox VM Creation" width="1000">
@@ -46,21 +45,17 @@ Designed and deployed an Active Directory Domain Controller in a virtual lab usi
     </tr>
 
   <tr>
-      <td><strong>Step 2<br>Adjust Iso Images</strong></td>
+      <td><strong>Step 2<br>ISO Boot Order Configuration</strong></td>
       <td>
-        Before launching the VM go into hardware section and make sure WinServ Iso is listed first then followed by Virtio ISO. Helps with diver installation.<br><br>
+        Adjusted virtual hardware settings to ensure the Windows Server ISO boots first, followed by the VirtIO ISO. This step ensures driver availability during installation.<br><br>
         <img src="https://github.com/user-attachments/assets/96b64655-b705-4a9c-832c-ae5558f0f9fe" alt="Adjust Iso Images" width="1000">
       </td>
     </tr>
 
   <tr>
-      <td><strong>Step 3<br>Launch VM & Install Windows Server</strong></td>
+      <td><strong>Step 3<br>Windows Server Installation</strong></td>
       <td>
-        Start the VM and open the console to begin the OS installation.<br>
-        <br>
-        -Select your region, time, and keyboard settings.<br>
-        -Windows Server 2022 Desktop Experience.<br>
-        -Custom Install.<br>
+        Launched the VM and installed Windows Server 2022 Desktop Experience. Selected region, language, and installation type (Custom Install). Proceeded through standard setup steps.<br>
         <br>
         <img src="https://github.com/user-attachments/assets/22b34de5-f488-4eb5-8a87-a56e0e50e10c"Launch VM & Install Windows Server" width="1000">
         <img src="https://github.com/user-attachments/assets/fe34e6fe-fb2f-48e4-8777-8eeab7867308"Launch VM & Install Windows Server" width="1000">
@@ -69,13 +64,14 @@ Designed and deployed an Active Directory Domain Controller in a virtual lab usi
     </tr>
 
   <tr>
-      <td><strong>Step 4<br>Install Windows Server VM Divers</strong></td>
+      <td><strong>Step 4<br>VirtIO Driver Installation</strong></td>
       <td>
-        Making sure the correct VirtIO files are used so you don't get error messages when using VM.<br>
+        Mounted the VirtIO ISO and manually installed critical drivers to enable virtual disk, network, and serial devices:<br>
         <br>
-        -VirtIO Balloon<br>
-        -VirtIO Scsi<br>
         -Red Hat VirtIO Ethernet<br>
+        -VirtIO Balloon<br>
+        -VirtIO SCSI<br>
+        Download source: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/<br>
         <br>
         <img src="https://github.com/user-attachments/assets/66d417ad-d099-42f3-bf13-dd85f1464056" alt="VM Diver Install" width="1000">
         <img src="https://github.com/user-attachments/assets/7ba4528d-32ee-41e6-be4a-d3c67cd01116" alt="VM Diver Install" width="1000">
@@ -84,24 +80,40 @@ Designed and deployed an Active Directory Domain Controller in a virtual lab usi
         <img src="https://github.com/user-attachments/assets/05f5b0af-e47c-482d-b420-9707d13ad9ad" alt="VM Diver Install" width="1000">
       </td>
     </tr>
-
-  <tr>
-      <td><strong>Step 5<br>Administrator Creation & Network</strong></td>
+<tr>
+      <td><strong>Step 5<br> Fixing PCI Simple Communications Controller Error</strong></td>
       <td>
-        Finishing the creation of Admin account and installation. Then update IP address of active directory so its on a private network not accessible to internet. <br><br>
+        Resolved missing driver by: <br><br>
+        1. Opening Device Manager<br>
+        2. Right-clicking PCI Simple Communications Controller<br>
+        3. Selecting “Browse my computer for drivers”<br>
+        4. Navigating to VirtIO ISO and selecting correct subfolder (e.g., NetKVM, Balloon)<br>
+        5. Letting Windows search and install the driver<br>
         <img src="https://github.com/user-attachments/assets/5ac9ae4a-a162-4b46-916e-921a02398c52" alt="DNS Configuration" width="1000">
+      </td>
+    </tr>
+     <tr>
+      <td><strong>Step 6<br>Fixing Keyboard Input Issues</strong></td>
+      <td>
+        Completed administrator setup and manually updated the server’s IP address, subnet mask, and DNS server to place it on a secure internal network. <br><br>
+        <img src="https://github.com/user-attachments/assets/5ac9ae4a-a162-4b46-916e-921a02398c52" alt="DNS Configuration" width="1000">
+        <img src="https://github.com/user-attachments/assets/40c7428d-d2ed-4b95-890a-c0ccd8be208f" alt="OU and User Setup" width="1000">
         <img src="https://github.com/user-attachments/assets/898e6c2b-8cd1-4d2d-855f-441314f267d6" alt="DNS Configuration" width="1000">
         <img src="https://github.com/user-attachments/assets/f87a7e7c-52f5-4cce-b74e-cb404372d9a0" alt="DNS Configuration" width="1000">
       </td>
     </tr>
 
   <tr>
-      <td><strong>Step 6<br>OU and User Creation</strong></td>
+      <td><strong>Step 7<br>Final Setup and Static IP Configuration</strong></td>
       <td>
-        Create Organizational Units (OUs) and add test user accounts to simulate a real organization structure.<br><br>
-        <img src="https://imgur.com/your_image_6.png" alt="OU and User Setup" width="1000">
+        Completed administrator setup and manually updated the server’s IP address, subnet mask, and DNS server to place it on a secure internal network. <br><br>
+        <img src="https://github.com/user-attachments/assets/5ac9ae4a-a162-4b46-916e-921a02398c52" alt="DNS Configuration" width="1000">
+        <img src="https://github.com/user-attachments/assets/40c7428d-d2ed-4b95-890a-c0ccd8be208f" alt="OU and User Setup" width="1000">
+        <img src="https://github.com/user-attachments/assets/898e6c2b-8cd1-4d2d-855f-441314f267d6" alt="DNS Configuration" width="1000">
+        <img src="https://github.com/user-attachments/assets/f87a7e7c-52f5-4cce-b74e-cb404372d9a0" alt="DNS Configuration" width="1000">
       </td>
     </tr>
+
 
   </tbody>
 </table>
