@@ -69,7 +69,7 @@ Designed and deployed an Active Directory Domain Controller in a virtual lab usi
     </tr>
 
   <tr>
-      <td><strong>Step 4<br>Install VM Divers</strong></td>
+      <td><strong>Step 4<br>Install Windows Server VM Divers</strong></td>
       <td>
         Making sure the correct VirtIO files are used so you don't get error messages when using VM.<br>
         <br>
@@ -86,10 +86,12 @@ Designed and deployed an Active Directory Domain Controller in a virtual lab usi
     </tr>
 
   <tr>
-      <td><strong>Step 5<br>DNS Integration</strong></td>
+      <td><strong>Step 5<br>Administrator Creation & Network</strong></td>
       <td>
-        Verify DNS settings and ensure that forward and reverse lookup zones are properly configured and dynamic updates are enabled.<br><br>
-        <img src="https://imgur.com/your_image_5.png" alt="DNS Configuration" width="600">
+        Finishing the creation of Admin account and installation. Then update IP address of active directory so its on a private network not accessible to internet. <br><br>
+        <img src="https://github.com/user-attachments/assets/5ac9ae4a-a162-4b46-916e-921a02398c52" alt="DNS Configuration" width="1000">
+        <img src="https://github.com/user-attachments/assets/898e6c2b-8cd1-4d2d-855f-441314f267d6" alt="DNS Configuration" width="1000">
+        <img src="https://github.com/user-attachments/assets/f87a7e7c-52f5-4cce-b74e-cb404372d9a0" alt="DNS Configuration" width="1000">
       </td>
     </tr>
 
@@ -97,39 +99,7 @@ Designed and deployed an Active Directory Domain Controller in a virtual lab usi
       <td><strong>Step 6<br>OU and User Creation</strong></td>
       <td>
         Create Organizational Units (OUs) and add test user accounts to simulate a real organization structure.<br><br>
-        <img src="https://imgur.com/your_image_6.png" alt="OU and User Setup" width="600">
-      </td>
-    </tr>
-
-  <tr>
-      <td><strong>Step 7<br>Group Policy Setup</strong></td>
-      <td>
-        Use Group Policy Management Console to create and link GPOs to control user settings (e.g., restrict control panel access).<br><br>
-        <img src="https://imgur.com/your_image_7.png" alt="GPO Creation" width="600">
-      </td>
-    </tr>
-
-   <tr>
-      <td><strong>Step 8<br>Domain Join</strong></td>
-      <td>
-        Join a client machine to the domain and confirm connectivity with the domain controller.<br><br>
-        <img src="https://imgur.com/your_image_8.png" alt="Client Domain Join" width="600">
-      </td>
-    </tr>
-
-  <tr>
-      <td><strong>Step 9<br>Test GPO Enforcement</strong></td>
-      <td>
-        Log in with a domain user and verify that GPOs are applied using `gpresult` and by testing expected policy effects.<br><br>
-        <img src="https://imgur.com/your_image_9.png" alt="GPO Testing" width="600">
-      </td>
-    </tr>
-
-  <tr>
-      <td><strong>Step 10<br>Review and Snapshot</strong></td>
-      <td>
-        Review configuration, create a Proxmox snapshot of the working domain controller for easy rollback or reuse.<br><br>
-        <img src="https://imgur.com/your_image_10.png" alt="Snapshot in Proxmox" width="600">
+        <img src="https://imgur.com/your_image_6.png" alt="OU and User Setup" width="1000">
       </td>
     </tr>
 
